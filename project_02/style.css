@@ -1,0 +1,81 @@
+body {
+    font-family: sans-serif;
+    background-color: #2a75bb; /* Azul Pokémon */
+}
+
+.images-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.images-container .image {
+    position: relative;
+    margin-right: -20px;
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.images-container .image img {
+    margin: 20px;
+    width: 150px;
+    height: 150px;
+    transition: transform 0.35s ease-in-out;
+    border: 5px solid #ffcb05; /* Amarillo Pokémon */
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.images-container .image .name {
+    position: absolute;
+    background-color: #ffcb05; /* Amarillo Pokémon */
+    border-radius: 5px;
+    color: #3b4cca; /* Azul Oscuro Pokémon */
+    display: none;
+    min-width: 100px;
+    width: 150px;
+    top: -40px;
+    padding: 10px 15px;
+}
+
+.images-container .image .name .text {
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    width: 150px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.images-container .image:hover .name {
+    display: inline-block;
+    transform: translateY(-20px);
+}
+
+.images-container .image .name::before {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    left: 40%;
+    bottom: -20px;
+    border-top: 10px solid #ffcb05; /* Amarillo Pokémon */
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+
+.images-container .image:hover img {
+    transform: translateY(-10px);
+}
+
+@media (max-width: 1170px) {
+    .images-container {
+        flex-direction: column;
+        height: 120vh;
+        transition: all 0.5s ease-in-out;
+    }
+}
